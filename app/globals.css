@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-headline: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #fcf9f8;
+  --color-primary: #051934;
+  --color-primary-container: #1c2e4a;
+  --color-secondary: #6b5d3e;
+  --color-secondary-container: #f2ddb7;
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #44474d;
+  --color-surface: #fcf9f8;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container-lowest: #ffffff;
+  --color-outline-variant: #c5c6ce;
+  --color-gold-accent: #c5b28e;
+}
+
+@utility hero-gradient {
+  background: linear-gradient(to bottom, rgba(5, 25, 52, 0.7) 0%, rgba(5, 25, 52, 0) 30%),
+              linear-gradient(to right, rgba(5, 25, 52, 0.9) 0%, rgba(5, 25, 52, 0.4) 100%);
+}
+
+@utility editorial-shadow {
+  box-shadow: 0 30px 40px -20px rgba(27, 28, 28, 0.06);
+}
+
+@utility animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+@layer components {
+  .cube-row {
+    perspective: 1000px;
+  }
+
+  .cube-btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 0.85rem;
+    border: 1px solid transparent;
+    transform-style: preserve-3d;
+    transform: translateZ(0) rotateX(0deg) rotateY(0deg);
+    transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      color 260ms ease,
+      border-color 260ms ease,
+      background 260ms ease;
+    box-shadow:
+      0 13px 24px -17px rgba(5, 25, 52, 0.82),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  .cube-btn:hover {
+    transform: translateY(-5px) rotateX(8deg) rotateY(-8deg);
+  }
+
+  .cube-btn:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--color-gold-accent) 75%, white 25%);
+    outline-offset: 3px;
+  }
+
+  .cube-btn-gold {
+    background: linear-gradient(145deg, #dec9a2 0%, #c5b28e 52%, #b09a72 100%);
+    box-shadow:
+      0 20px 34px -20px rgba(197, 178, 142, 0.95),
+      inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  }
+
+  .cube-btn-ice {
+    border-color: rgba(255, 255, 255, 0.33);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.09) 100%);
+  }
+
+  .cube-btn-ice:hover {
+    color: #051934;
+    border-color: rgba(255, 255, 255, 0.88);
+    background: linear-gradient(145deg, #ffffff 0%, #edf1f7 100%);
+  }
+
+  .cube-btn-navy {
+    border-color: rgba(197, 178, 142, 0.62);
+    background: linear-gradient(145deg, #14315c 0%, #0e2748 100%);
+  }
+
+  .cube-btn-navy:hover {
+    color: #ffffff;
+    border-color: rgba(214, 194, 154, 0.92);
+    box-shadow:
+      0 18px 30px -18px rgba(11, 34, 64, 0.95),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+
+  .cube-top-shine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 44%;
+    pointer-events: none;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0));
+    z-index: 0;
+  }
+
+  .cube-side-face {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    pointer-events: none;
+    transform: skewY(-15deg) translateX(8px);
+    transform-origin: top right;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.22));
+    opacity: 0.58;
+    transition: opacity 320ms ease;
+    z-index: 0;
+  }
+
+  .cube-btn:hover .cube-side-face {
+    opacity: 0.75;
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans;
+  }
+}
