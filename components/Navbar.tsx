@@ -37,7 +37,7 @@ const Navbar = () => {
     { name: 'Home', href: '/', active: isActivePath('/') },
     { name: 'Our Services', href: '/services', active: isActivePath('/services') },
     {
-      name: 'Join User',
+      name: 'Join Us',
       href: '#',
       active: false,
       children: [
@@ -56,7 +56,7 @@ const Navbar = () => {
         : 'bg-white/80 backdrop-blur-md border-b border-white/40'
         }`}
     >
-      <div className="max-w-7xl mx-auto h-[82px] px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto h-20.5 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         <Link
           href="/"
           aria-label="Cube Properties home"
@@ -85,7 +85,7 @@ const Navbar = () => {
                   <ChevronDown size={14} className="ml-1.5 -mt-0.5" />
                 </button>
                 <div className="absolute left-0 top-full pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200">
-                  <div className="min-w-[210px] rounded-xl border border-outline-variant/20 bg-white shadow-xl p-2">
+                  <div className="min-w-52.5 rounded-xl border border-outline-variant/20 bg-white shadow-xl p-2">
                     {link.children.map((child) => (
                       <Link
                         key={child.name}
