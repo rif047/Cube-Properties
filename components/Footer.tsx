@@ -8,11 +8,11 @@ import { withBasePath } from '@/lib/base-path';
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-[#0d2447] text-white pt-16 md:pt-24 pb-10 md:pb-12">
-      <div className="pointer-events-none absolute -top-28 -left-20 h-72 w-72 rounded-full bg-[#c5b28e]/20 blur-3xl" />
+      <div className="pointer-events-none absolute -top-28 -left-20 h-72 w-72 rounded-full bg-gold-accent/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 right-0 h-80 w-80 rounded-full bg-[#3f5f8f]/30 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 md:p-10">
+        <div className="rounded-3xl border border-white/10 bg-white/4 backdrop-blur-sm p-6 sm:p-8 md:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10">
             <div className="lg:col-span-5">
               <div className="flex flex-col items-start gap-3 sm:gap-4">
@@ -48,12 +48,12 @@ const Footer = () => {
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Phone size={15} className="text-gold-accent shrink-0" />
-                    +44 20 3051 1660
+                    +44 1708 915172
                   </li>
                   <li className="flex items-start gap-2.5 leading-relaxed">
                     <MapPin size={15} className="text-gold-accent shrink-0 mt-0.5" />
                     <span>
-                      Kings House, Elm Park Avenue,
+                      King House, Elm Park Avenue,
                       <br />
                       RM12 4RS
                     </span>
@@ -101,8 +101,8 @@ const Footer = () => {
                 </p>
               </div>
 
-              <div className="flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3 w-full md:w-auto md:min-w-[340px]">
-                <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-[120px]">
+              <div className="flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3 w-full md:w-auto md:min-w-85">
+                <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-30">
                   <Image
                     src={withBasePath('/images/prs.png')}
                     alt="PRS logo"
@@ -111,7 +111,7 @@ const Footer = () => {
                     className="h-7 sm:h-8 w-full object-contain"
                   />
                 </div>
-                <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-[120px]">
+                <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-30">
                   <Image
                     src={withBasePath('/images/dps.jpg')}
                     alt="DPS logo"
@@ -120,7 +120,7 @@ const Footer = () => {
                     className="h-7 sm:h-8 w-full object-contain"
                   />
                 </div>
-                <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-[120px]">
+                <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-30">
                   <Image
                     src={withBasePath('/images/ico.jpeg')}
                     alt="ICO registration badge"

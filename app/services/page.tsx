@@ -271,8 +271,8 @@ export default function ServicesPage() {
             Looking For The Best Real Estate Company In United Kingdom
           </h3>
           <p className="relative text-white/80 text-sm sm:text-base mt-4 max-w-3xl leading-relaxed">
-            Email: info@cubeproperties.co.uk | Phone: +44 20 3051 1660 | Address:
-            Kings House, Elm Park Avenue, RM12 4RS.
+            Email: info@cubeproperties.co.uk | Phone: +44 1708 915172 | Address:
+            King House, Elm Park Avenue, RM12 4RS.
           </p>
         </div>
       </section>

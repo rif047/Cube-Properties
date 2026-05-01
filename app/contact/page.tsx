@@ -19,13 +19,13 @@ const contactCards = [
   },
   {
     title: 'Phone',
-    value: '+44 20 3051 1660',
-    href: 'tel:+442030511660',
+    value: '+44 1708 915172',
+    href: 'tel:+441708915172',
     icon: Phone,
   },
   {
     title: 'Address',
-    value: 'Kings House, Elm Park Avenue, RM12 4RS',
+    value: 'King House, Elm Park Avenue, RM12 4RS',
     href: '#',
     icon: MapPin,
   },
