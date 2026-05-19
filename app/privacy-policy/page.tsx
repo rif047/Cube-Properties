@@ -52,7 +52,7 @@ const policySections = [
   {
     title: 'Contact About Privacy',
     content:
-      'For any privacy request or concern, please contact us at info@cubeproperties.co.uk or +44 1708 915172. Postal address: King House, Elm Park Avenue, RM12 4RS.',
+      'For any privacy request or concern, please contact us at info@cubeproperties.co.uk or +44 20 3051 1660. Postal address: King House, Elm Park Avenue, RM12 4RS.',
   },
 ];
 

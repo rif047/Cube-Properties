@@ -42,7 +42,7 @@ const cookieSections = [
   {
     title: 'Contact Us',
     content:
-      'For questions about this Cookie Policy, contact us at info@cubeproperties.co.uk or +44 1708 915172. Postal address: King House, Elm Park Avenue, RM12 4RS.',
+      'For questions about this Cookie Policy, contact us at info@cubeproperties.co.uk or +44 20 3051 1660. Postal address: King House, Elm Park Avenue, RM12 4RS.',
   },
 ];
 

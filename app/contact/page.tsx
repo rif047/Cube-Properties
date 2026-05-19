@@ -19,8 +19,8 @@ const contactCards = [
   },
   {
     title: 'Phone',
-    value: '+44 1708 915172',
-    href: 'tel:+441708915172',
+    value: '+44 20 3051 1660',
+    href: 'tel:+44 20 3051 1660',
     icon: Phone,
   },
   {

@@ -38,7 +38,7 @@ const CTA = () => {
                   Email: info@cubeproperties.co.uk
                 </span>
                 <span className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-white/85">
-                  Phone: +44 1708 915172
+                  Phone: +44 20 3051 1660
                 </span>
               </div>
             </motion.div>
