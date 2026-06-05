@@ -63,8 +63,8 @@ const Navbar = () => {
           className="flex items-center shrink-0"
         >
           <Image
-            src={withBasePath('/images/logo.png')}
-            alt="Cube Properties logo"
+            src={withBasePath('/images/cube-properties-group-logo.png')}
+            alt="Cube Properties Group logo for London property management and guaranteed rent services"
             width={646}
             height={203}
             className="h-11 sm:h-12 md:h-14 w-auto object-contain"

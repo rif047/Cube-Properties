@@ -3,12 +3,26 @@ import Link from 'next/link';
 import { Building2, Mail, MapPin, Phone } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { createPageMetadata } from '@/lib/page-metadata';
+import {
+  createBreadcrumbSchema,
+  createContactPageSchema,
+  createWebPageSchema,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Contact | Cube Properties Group',
+export const metadata: Metadata = createPageMetadata({
+  path: '/contact',
+  title: 'Contact Us in London',
   description:
-    'Contact Cube Properties Group in London for guaranteed rent, property management, and letting support.',
-};
+    'Contact Cube Properties Group in London for guaranteed rent, property management, landlord services, tenant support, and letting enquiries.',
+  keywords: [
+    'Cube Properties contact',
+    'property management london contact',
+    'guaranteed rent london contact',
+    'Cube Properties London',
+  ],
+});
 
 const contactCards = [
   {
@@ -40,6 +54,21 @@ const actionButtons = [
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-surface overflow-x-hidden">
+      <JsonLd
+        data={[
+          createWebPageSchema({
+            path: '/contact',
+            name: 'Contact Us in London',
+            description:
+              'Contact Cube Properties Group in London for guaranteed rent, property management, landlord services, tenant support, and letting enquiries.',
+          }),
+          createContactPageSchema(),
+          createBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Contact', path: '/contact' },
+          ]),
+        ]}
+      />
       <Navbar />
 
       <section className="relative pt-36 md:pt-44 pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 bg-primary">
@@ -54,6 +83,11 @@ export default function ContactPage() {
           <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-3xl mt-6 leading-relaxed">
             Cube Properties Group helps landlords and tenants with reliable,
             professional property services across London.
+          </p>
+          <p className="text-white/75 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+            Contact us about guaranteed rent, property management, tenant find
+            services, HMO setup support, or general landlord and tenant
+            enquiries.
           </p>
         </div>
       </section>
@@ -105,6 +139,38 @@ export default function ContactPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto rounded-2xl border border-outline-variant/20 bg-surface-container-low p-6 sm:p-8 md:p-10">
+          <h2 className="text-2xl md:text-3xl font-headline font-extrabold text-primary-container leading-tight">
+            Speak To A London Property Management Team
+          </h2>
+          <p className="text-on-surface-variant text-sm md:text-base leading-relaxed mt-4 max-w-4xl">
+            Whether you are a landlord looking for better occupancy and more
+            stable income, or a tenant needing support from a professionally
+            managed property team, Cube Properties Group is available to help.
+            The contact details on this page are the fastest route for direct
+            enquiries about our services in London.
+          </p>
+          <p className="text-on-surface-variant text-sm md:text-base leading-relaxed mt-4 max-w-4xl">
+            You can also review our{' '}
+            <Link
+              href="/services"
+              className="text-secondary font-semibold hover:text-primary-container transition-colors"
+            >
+              property management services
+            </Link>{' '}
+            or submit a dedicated enquiry through the{' '}
+            <Link
+              href="/i-am-a-landlord"
+              className="text-secondary font-semibold hover:text-primary-container transition-colors"
+            >
+              landlord services page
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

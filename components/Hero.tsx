@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { withBasePath } from '@/lib/base-path';
@@ -10,13 +11,13 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
-      src: withBasePath('/images/slider-1.jpg'),
-      alt: 'Premium London living room interior',
+      src: withBasePath('/images/guaranteed-rent-london-property-management.jpg'),
+      alt: 'Modern London rental property interior managed by Cube Properties Group',
     },
     {
       id: 2,
-      src: withBasePath('/images/slider-2.jpg'),
-      alt: 'Luxury furnished apartment in London',
+      src: withBasePath('/images/london-managed-rental-property.jpg'),
+      alt: 'Professionally furnished London apartment for managed tenancy',
     },
   ];
 
@@ -126,7 +127,9 @@ const Hero = () => {
             variants={itemVariants}
             className="text-white/70 text-base md:text-lg max-w-xl mb-8 sm:mb-10 leading-relaxed font-light"
           >
-            Maximise rental income with fully managed property services across London.
+            Secure guaranteed rent in London with fully managed property services,
+            tenant support, and landlord-focused solutions designed to protect
+            income and reduce day-to-day hassle.
           </motion.p>
           
           <motion.div
@@ -134,31 +137,40 @@ const Hero = () => {
             className="w-full max-w-3xl rounded-2xl border border-white/20 bg-[#091f3d]/55 backdrop-blur-xl p-2 sm:p-3 shadow-[0_30px_70px_-40px_rgba(5,25,52,0.9)]"
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 cube-row">
-              <button className="group cube-btn cube-btn-gold text-primary px-5 py-4 text-[11px] font-black tracking-[0.18em] uppercase">
+              <Link
+                href="/i-am-a-landlord"
+                className="group cube-btn cube-btn-gold text-primary px-5 py-4 text-[11px] font-black tracking-[0.18em] uppercase cursor-pointer"
+              >
                 <span className="relative z-10 flex items-center justify-center">
                   I am a Landlord
                   <ArrowRight className="ml-2.5 w-4 h-4 transition-transform duration-500 group-hover:translate-x-1.5" />
                 </span>
                 <span className="cube-top-shine" aria-hidden="true" />
                 <span className="cube-side-face" aria-hidden="true" />
-              </button>
+              </Link>
 
-              <button className="group cube-btn cube-btn-ice text-white hover:text-primary px-5 py-4 text-[11px] font-black tracking-[0.18em] uppercase">
+              <Link
+                href="/i-am-a-tenant"
+                className="group cube-btn cube-btn-ice text-white hover:text-primary px-5 py-4 text-[11px] font-black tracking-[0.18em] uppercase cursor-pointer"
+              >
                 <span className="flex items-center justify-center">
                   I am a Tenant
                 </span>
                 <span className="cube-top-shine" aria-hidden="true" />
                 <span className="cube-side-face" aria-hidden="true" />
-              </button>
+              </Link>
 
-              <button className="group cube-btn cube-btn-navy text-gold-accent px-5 py-4 text-[11px] font-black tracking-[0.18em] uppercase">
+              <Link
+                href="/work-with-us"
+                className="group cube-btn cube-btn-navy text-gold-accent px-5 py-4 text-[11px] font-black tracking-[0.18em] uppercase cursor-pointer"
+              >
                 <span className="flex items-center justify-center">
                   Work With Us
                   <ChevronRight className="ml-2 w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
                 </span>
                 <span className="cube-top-shine" aria-hidden="true" />
                 <span className="cube-side-face" aria-hidden="true" />
-              </button>
+              </Link>
             </div>
           </motion.div>
         </motion.div>
@@ -176,7 +188,8 @@ const Hero = () => {
               <span className="text-[#e8cb96] text-xs font-extrabold uppercase tracking-[0.2em] block mb-4">Guaranteed Rent In London</span>
               <div className="text-3xl font-headline font-extrabold text-white mb-2 leading-tight">Predictable income. Zero hassle.</div>
               <p className="text-white/70 text-[10px] leading-relaxed uppercase tracking-wider">
-                Guaranteed monthly rent with full management support.
+                Guaranteed monthly rent, reduced void risk, and professional
+                property management support.
               </p>
             </div>
             {/* Animated background glow */}

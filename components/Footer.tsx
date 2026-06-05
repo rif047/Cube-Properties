@@ -18,8 +18,8 @@ const Footer = () => {
               <div className="flex flex-col items-start gap-3 sm:gap-4">
                 <div className="rounded-xl bg-white px-3 py-2 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)]">
                   <Image
-                    src={withBasePath('/images/logo.png')}
-                    alt="Cube Properties logo"
+                    src={withBasePath('/images/cube-properties-group-logo.png')}
+                    alt="Cube Properties Group logo for guaranteed rent and property management in London"
                     width={220}
                     height={70}
                     className="h-9 sm:h-11 w-auto object-contain"
@@ -31,12 +31,13 @@ const Footer = () => {
                 Hands-Free Property Income. Done Right.
               </p>
               <p className="mt-3 text-white/60 text-sm leading-relaxed max-w-md">
-                London-focused management with reliable communication, compliance,
-                and smooth tenancy support.
+                London-focused property management with guaranteed rent,
+                compliance support, responsive communication, and smooth tenancy
+                coordination for landlords and tenants.
               </p>
             </div>
 
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="rounded-2xl border border-white/10 bg-[#122f5a]/70 p-5 sm:p-6">
                 <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold-accent mb-4">
                   Contact Details
@@ -59,6 +60,28 @@ const Footer = () => {
                     </span>
                   </li>
                 </ul>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-[#122f5a]/70 p-5 sm:p-6">
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold-accent mb-4">
+                  Services
+                </p>
+                <div className="flex flex-col gap-3">
+                  {[
+                    { label: 'Guaranteed Rent London', href: '/services' },
+                    { label: 'Property Management London', href: '/services' },
+                    { label: 'Tenant Find Service', href: '/services' },
+                    { label: 'Landlord Services', href: '/i-am-a-landlord' },
+                  ].map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="text-sm text-white/75 hover:text-white transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-[#122f5a]/70 p-5 sm:p-6">
@@ -96,6 +119,17 @@ const Footer = () => {
                 <p className="mt-2 text-xs sm:text-sm text-gold-accent font-semibold tracking-[0.06em] text-center sm:text-left">
                   Registration Number: ZC110845
                 </p>
+                <p className="mt-2 text-xs sm:text-sm text-gold-accent font-semibold tracking-[0.06em] text-center sm:text-left">
+                  Company Number:{' '}
+                  <Link
+                    href="https://find-and-update.company-information.service.gov.uk/company/14885336"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-white transition-colors"
+                  >
+                    14885336
+                  </Link>
+                </p>
                 <p className="mt-4 text-[10px] sm:text-xs text-white/45 font-semibold tracking-[0.12em] uppercase text-center sm:text-left">
                   © 2026 Cube Properties Group LTD | All rights reserved.
                 </p>
@@ -104,8 +138,8 @@ const Footer = () => {
               <div className="flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3 w-full md:w-auto md:min-w-85">
                 <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-30">
                   <Image
-                    src={withBasePath('/images/prs.png')}
-                    alt="PRS logo"
+                    src={withBasePath('/images/property-redress-scheme-logo.png')}
+                    alt="Property Redress Scheme membership logo"
                     width={110}
                     height={56}
                     className="h-7 sm:h-8 w-full object-contain"
@@ -113,8 +147,8 @@ const Footer = () => {
                 </div>
                 <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-30">
                   <Image
-                    src={withBasePath('/images/dps.jpg')}
-                    alt="DPS logo"
+                    src={withBasePath('/images/deposit-protection-service-logo.jpg')}
+                    alt="Deposit Protection Service logo"
                     width={110}
                     height={56}
                     className="h-7 sm:h-8 w-full object-contain"
@@ -122,8 +156,8 @@ const Footer = () => {
                 </div>
                 <div className="flex-1 md:flex-none rounded-xl bg-white px-2.5 py-1.5 shadow-[0_10px_30px_-15px_rgba(255,255,255,0.7)] max-w-30">
                   <Image
-                    src={withBasePath('/images/ico.jpeg')}
-                    alt="ICO registration badge"
+                    src={withBasePath('/images/ico-data-protection-registration-badge.jpeg')}
+                    alt="ICO data protection registration badge"
                     width={110}
                     height={56}
                     className="h-7 sm:h-8 w-full object-contain"

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import {
   BadgePoundSterling,
   Building2,
@@ -11,12 +12,28 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { createPageMetadata } from '@/lib/page-metadata';
+import {
+  createBreadcrumbSchema,
+  createServicePageSchema,
+  createWebPageSchema,
+} from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Our Services | Cube Properties Group',
+export const metadata: Metadata = createPageMetadata({
+  path: '/services',
+  title: 'Property Management Services in London',
   description:
-    'Guaranteed Rent, Full Property Management, Let Only (Tenant Find), and HMO Setup across London.',
-};
+    'Explore Cube Properties Group services in London, including guaranteed rent, full property management, tenant find, and HMO setup for landlords.',
+  keywords: [
+    'property management london',
+    'full property management london',
+    'guaranteed rent london',
+    'tenant find service london',
+    'hmo setup london',
+    'letting services london',
+  ],
+});
 
 const services = [
   {
@@ -82,7 +99,7 @@ const services = [
       'Market analysis and ROI-focused planning',
     ],
     bestFor:
-      'Landlords and tanents entering or scaling high-yield property portfolios.',
+      'Landlords and tenants entering or scaling high-yield property portfolios.',
     result:
       'A structured, high-yield property setup designed for long-term growth.',
     icon: Building2,
@@ -92,6 +109,21 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-surface overflow-x-hidden">
+      <JsonLd
+        data={[
+          createWebPageSchema({
+            path: '/services',
+            name: 'Property Management Services in London',
+            description:
+              'Explore Cube Properties Group services in London, including guaranteed rent, full property management, tenant find, and HMO setup for landlords.',
+          }),
+          createServicePageSchema(),
+          createBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' },
+          ]),
+        ]}
+      />
       <Navbar />
 
       <section className="relative pt-36 md:pt-44 pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 bg-primary">
@@ -110,13 +142,13 @@ export default function ServicesPage() {
           </p>
           <p className="text-white/75 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed">
             Hands-Free Property Income. Done Right. From guaranteed rent to full
-            management, we help landlords and tanents maximise returns while
+            management, we help landlords and tenants maximise returns while
             giving tenants professionally managed homes.
           </p>
           <p className="text-white/70 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed">
-            Guaranteed Rent In London. Looking for the best real estate company in
-            the United Kingdom? Our experienced, customer-focused team delivers
-            reliable service with transparent communication.
+            Guaranteed rent in London, landlord-focused management, and practical
+            support for tenants. Our experienced team delivers reliable service,
+            transparent communication, and a compliance-first approach.
           </p>
         </div>
       </section>
@@ -274,6 +306,36 @@ export default function ServicesPage() {
             Email: info@cubeproperties.co.uk | Phone: +44 20 3051 1660 | Address:
             King House, Elm Park Avenue, RM12 4RS.
           </p>
+        </div>
+      </section>
+
+      <section className="pb-16 md:pb-24 px-4 sm:px-6 lg:px-8 bg-surface">
+        <div className="max-w-7xl mx-auto rounded-2xl border border-outline-variant/20 bg-surface-container-low p-6 sm:p-8 md:p-10">
+          <h2 className="text-2xl md:text-3xl font-headline font-extrabold text-primary-container leading-tight">
+            Property Management Services For Different Landlord Needs
+          </h2>
+          <p className="text-on-surface-variant text-sm md:text-base leading-relaxed mt-4 max-w-4xl">
+            Some landlords want guaranteed rent and minimal involvement. Others
+            prefer full property management or tenant find support while keeping
+            more control over day-to-day decisions. Cube Properties Group offers
+            flexible property services in London so landlords can choose the
+            management level that best matches their property goals, risk
+            tolerance, and rental strategy.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              href="/i-am-a-landlord"
+              className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white hover:bg-primary-container transition-colors"
+            >
+              Discuss Landlord Services
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-full border border-primary/20 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary-container hover:border-secondary hover:text-secondary transition-colors"
+            >
+              Contact Cube Properties
+            </Link>
+          </div>
         </div>
       </section>
 

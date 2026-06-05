@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 
 const CTA = () => {
@@ -28,10 +29,11 @@ const CTA = () => {
                 Ready To Work With Us
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-headline font-extrabold tracking-tight leading-[1.07] mb-5 md:mb-6 max-w-3xl">
-                Looking for the best real estate company in the UK?
+                Looking for guaranteed rent and property management in London?
               </h2>
               <p className="text-white/80 text-base md:text-xl max-w-2xl leading-relaxed">
-                Hands-free letting and management across London.
+                Speak with Cube Properties Group about landlord services, tenant
+                find support, and fully managed letting solutions across London.
               </p>
               <div className="mt-5 flex flex-wrap gap-3 text-sm">
                 <span className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-white/85">
@@ -40,6 +42,20 @@ const CTA = () => {
                 <span className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-white/85">
                   Phone: +44 20 3051 1660
                 </span>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center rounded-full bg-gold-accent px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary hover:bg-white transition-colors"
+                >
+                  Contact Us
+                </Link>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center rounded-full border border-white/20 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white hover:border-gold-accent hover:text-gold-accent transition-colors"
+                >
+                  Compare Services
+                </Link>
               </div>
             </motion.div>
 

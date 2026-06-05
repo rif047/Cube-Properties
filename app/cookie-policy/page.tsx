@@ -1,12 +1,20 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { createPageMetadata } from '@/lib/page-metadata';
+import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Cookie Policy | Cube Properties Group',
+export const metadata: Metadata = createPageMetadata({
+  path: '/cookie-policy',
+  title: 'Cookie Policy',
   description:
-    'Learn how Cube Properties Group uses cookies and similar technologies on our website.',
-};
+    'Learn how Cube Properties Group uses cookies and similar technologies across our property management website.',
+  keywords: [
+    'Cube Properties cookie policy',
+    'property website cookies policy',
+  ],
+});
 
 const cookieSections = [
   {
@@ -49,6 +57,20 @@ const cookieSections = [
 export default function CookiePolicyPage() {
   return (
     <main className="min-h-screen bg-surface overflow-x-hidden">
+      <JsonLd
+        data={[
+          createWebPageSchema({
+            path: '/cookie-policy',
+            name: 'Cookie Policy',
+            description:
+              'Learn how Cube Properties Group uses cookies and similar technologies across our property management website.',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Cookie Policy', path: '/cookie-policy' },
+          ]),
+        ]}
+      />
       <Navbar />
 
       <section className="relative pt-36 md:pt-44 pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 bg-primary">
@@ -63,6 +85,10 @@ export default function CookiePolicyPage() {
           <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-3xl mt-6 leading-relaxed">
             This page explains how Cube Properties Group uses cookies and related
             technologies across our website.
+          </p>
+          <p className="text-white/75 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+            This includes website functionality, analytics, and usability support
+            for visitors exploring our landlord and tenant services in London.
           </p>
           <p className="text-white/70 text-xs sm:text-sm mt-4 tracking-[0.16em] uppercase">
             Effective Date: April 15, 2026

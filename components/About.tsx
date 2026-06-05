@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Building2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -44,7 +45,8 @@ const About = () => {
           transition={{ delay: 0.12, duration: 0.7 }}
           className="text-2xl sm:text-3xl md:text-[2.6rem] font-headline font-extrabold text-primary-container leading-[1.15] mb-6 max-w-4xl mx-auto"
         >
-          We manage tenants, rent, maintenance, and compliance so landlords earn stress-free income.
+          We manage tenants, rent, maintenance, and compliance so landlords can
+          earn more predictable rental income across London.
         </motion.h2>
 
         <motion.div
@@ -62,7 +64,9 @@ const About = () => {
           transition={{ delay: 0.42, duration: 0.6 }}
           className="text-on-surface-variant text-sm md:text-[1.02rem] leading-relaxed max-w-2xl mx-auto"
         >
-          Hands-free property letting for landlords and tanents across London.
+          Cube Properties Group provides landlord-focused property management in
+          London, including guaranteed rent, tenant find support, compliance
+          coordination, and responsive tenancy management.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -71,7 +75,8 @@ const About = () => {
           transition={{ delay: 0.52, duration: 0.6 }}
           className="text-on-surface-variant text-sm md:text-[1.02rem] leading-relaxed max-w-2xl mx-auto mt-3"
         >
-          Reliable service. Better occupancy. Strong long-term returns.
+          Our approach is built for better occupancy, smoother operations, and
+          stronger long-term returns without the stress of self-managing.
         </motion.p>
 
           <motion.div
@@ -90,6 +95,24 @@ const About = () => {
               </div>
             ))}
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.72, duration: 0.6 }}
+            className="mt-7 text-sm leading-relaxed text-on-surface-variant max-w-3xl mx-auto"
+          >
+            Explore our{' '}
+            <Link href="/services" className="text-secondary font-semibold hover:text-primary-container transition-colors">
+              property management services
+            </Link>{' '}
+            or submit a landlord enquiry through the{' '}
+            <Link href="/i-am-a-landlord" className="text-secondary font-semibold hover:text-primary-container transition-colors">
+              landlord services page
+            </Link>
+            .
+          </motion.p>
         </div>
       </div>
     </section>

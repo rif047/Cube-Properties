@@ -1,12 +1,20 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { createPageMetadata } from '@/lib/page-metadata';
+import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Terms & Conditions | Cube Properties Group',
+export const metadata: Metadata = createPageMetadata({
+  path: '/terms-and-conditions',
+  title: 'Terms and Conditions',
   description:
-    'Read the Terms & Conditions for using Cube Properties Group services and website.',
-};
+    'Read the terms and conditions for using Cube Properties Group services and website content in London.',
+  keywords: [
+    'Cube Properties terms and conditions',
+    'property management website terms',
+  ],
+});
 
 const termsSections = [
   {
@@ -64,6 +72,20 @@ const termsSections = [
 export default function TermsAndConditionsPage() {
   return (
     <main className="min-h-screen bg-surface overflow-x-hidden">
+      <JsonLd
+        data={[
+          createWebPageSchema({
+            path: '/terms-and-conditions',
+            name: 'Terms and Conditions',
+            description:
+              'Read the terms and conditions for using Cube Properties Group services and website content in London.',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Terms and Conditions', path: '/terms-and-conditions' },
+          ]),
+        ]}
+      />
       <Navbar />
 
       <section className="relative pt-36 md:pt-44 pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 bg-primary">
@@ -78,6 +100,10 @@ export default function TermsAndConditionsPage() {
           <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-3xl mt-6 leading-relaxed">
             These terms outline the conditions for using Cube Properties Group
             services and website content.
+          </p>
+          <p className="text-white/75 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+            They apply to our London property management, guaranteed rent,
+            letting, landlord, and tenant-related services.
           </p>
           <p className="text-white/70 text-xs sm:text-sm mt-4 tracking-[0.16em] uppercase">
             Effective Date: April 15, 2026

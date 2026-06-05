@@ -3,18 +3,42 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FormEmbedFrame from '@/components/FormEmbedFrame';
+import JsonLd from '@/components/JsonLd';
+import { createPageMetadata } from '@/lib/page-metadata';
+import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Work With Us | Cube Properties Group',
+export const metadata: Metadata = createPageMetadata({
+  path: '/work-with-us',
+  title: 'Work With a Property Management Company in London',
   description:
-    'Submit your collaboration details through Cube Properties Group work with us form.',
-};
+    'Submit your details to work with Cube Properties Group on property collaboration, landlord support, and letting-related opportunities in London.',
+  keywords: [
+    'work with property management company london',
+    'property collaboration london',
+    'partner with letting company london',
+    'Cube Properties work with us',
+  ],
+});
 
 const workWithUsFormUrl = 'https://backend.cubeproperties.co.uk/?p=11';
 
 export default function WorkWithUsPage() {
   return (
     <main className="min-h-screen bg-surface overflow-x-hidden">
+      <JsonLd
+        data={[
+          createWebPageSchema({
+            path: '/work-with-us',
+            name: 'Work With a Property Management Company in London',
+            description:
+              'Submit your details to work with Cube Properties Group on property collaboration, landlord support, and letting-related opportunities in London.',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Work With Us', path: '/work-with-us' },
+          ]),
+        ]}
+      />
       <Navbar />
 
       <section className="relative pt-36 md:pt-44 pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 bg-primary">
@@ -27,10 +51,26 @@ export default function WorkWithUsPage() {
             Work With Cube Properties
           </h1>
           <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-3xl mt-6 leading-relaxed">
-            Join our network by completing the collaboration form below.
+            Join our network by completing the collaboration form below if you
+            want to work with a London property management company focused on
+            landlords, tenants, and letting operations.
           </p>
           <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-3xl mt-2 leading-relaxed">
             Share your details and our team will review your submission shortly.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-18 px-4 sm:px-6 lg:px-8 bg-surface">
+        <div className="max-w-7xl mx-auto rounded-2xl border border-outline-variant/20 bg-white p-6 sm:p-8 md:p-10">
+          <h2 className="text-2xl md:text-3xl font-headline font-extrabold text-primary-container leading-tight">
+            Collaboration Opportunities With Cube Properties Group
+          </h2>
+          <p className="text-on-surface-variant text-sm md:text-base leading-relaxed mt-4 max-w-4xl">
+            We welcome relevant enquiries from people and businesses who want to
+            work with Cube Properties Group in support of property management,
+            lettings, landlord services, tenancy operations, or related
+            collaboration opportunities across London.
           </p>
         </div>
       </section>

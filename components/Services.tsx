@@ -1,31 +1,32 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Banknote, Home, Search, Building } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const services = [
   {
     title: 'Guaranteed Rent (Rent-to-Rent)',
-    description: 'Fixed monthly rent. No void stress.',
+    description: 'Guaranteed rent in London with predictable monthly income and less void-period risk.',
     icon: Banknote,
     bg: 'bg-surface-container-lowest',
   },
   {
     title: 'Full Property Management',
-    description: 'We handle tenants, rent, maintenance, and compliance.',
+    description: 'We handle tenants, rent collection, maintenance, and compliance from end to end.',
     icon: Home,
     bg: 'bg-surface-container-low',
   },
   {
     title: 'Let Only (Tenant Find)',
-    description: 'We find reliable tenants fast.',
+    description: 'We market your property and place reliable, well-referenced tenants quickly.',
     icon: Search,
     bg: 'bg-surface-container-lowest',
   },
   {
     title: 'HMO Setup',
-    description: 'Setup support to improve rental yield.',
+    description: 'HMO setup support designed to improve layout, compliance, and rental yield.',
     icon: Building,
     bg: 'bg-surface-container-low',
   },
@@ -49,7 +50,7 @@ const Services = () => {
           >
             <h3 className="text-primary-container/60 font-medium text-xs sm:text-sm uppercase tracking-[0.28em] sm:tracking-[0.4em] mb-3">Our Services</h3>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-headline font-extrabold text-primary-container tracking-tighter max-w-4xl">
-              Property Services For Landlords & Tanents
+              Property Services For Landlords & Tenants
             </h2>
           </motion.div>
           <motion.div 
@@ -59,7 +60,9 @@ const Services = () => {
             className="max-w-md md:text-right"
           >
             <p className="text-on-surface-variant text-xs sm:text-sm leading-relaxed">
-              Core services for landlords and tanents in London.
+              Core property management and letting services for landlords in
+              London, with professional support for tenants throughout the
+              tenancy.
             </p>
           </motion.div>
         </div>
@@ -106,6 +109,21 @@ const Services = () => {
               {item}
             </div>
           ))}
+        </div>
+
+        <div className="mt-7 flex flex-wrap gap-3">
+          <Link
+            href="/services"
+            className="inline-flex items-center rounded-full border border-primary/20 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary-container hover:border-secondary hover:text-secondary transition-colors"
+          >
+            View All Services
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center rounded-full border border-primary/20 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary-container hover:border-secondary hover:text-secondary transition-colors"
+          >
+            Contact Our Team
+          </Link>
         </div>
       </div>
     </section>

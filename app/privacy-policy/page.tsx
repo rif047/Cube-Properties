@@ -1,12 +1,20 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { createPageMetadata } from '@/lib/page-metadata';
+import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Cube Properties Group',
+export const metadata: Metadata = createPageMetadata({
+  path: '/privacy-policy',
+  title: 'Privacy Policy',
   description:
-    'Read how Cube Properties Group collects, uses, stores, and protects personal data across our property services in London.',
-};
+    'Read how Cube Properties Group collects, uses, stores, and protects personal data across our property management and letting services in London.',
+  keywords: [
+    'Cube Properties privacy policy',
+    'property management privacy policy london',
+  ],
+});
 
 const policySections = [
   {
@@ -59,6 +67,20 @@ const policySections = [
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-surface overflow-x-hidden">
+      <JsonLd
+        data={[
+          createWebPageSchema({
+            path: '/privacy-policy',
+            name: 'Privacy Policy',
+            description:
+              'Read how Cube Properties Group collects, uses, stores, and protects personal data across our property management and letting services in London.',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Privacy Policy', path: '/privacy-policy' },
+          ]),
+        ]}
+      />
       <Navbar />
 
       <section className="relative pt-36 md:pt-44 pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 bg-primary">
@@ -73,6 +95,10 @@ export default function PrivacyPolicyPage() {
           <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-3xl mt-6 leading-relaxed">
             This page explains how Cube Properties Group collects, uses, and
             protects personal information in relation to our property services.
+          </p>
+          <p className="text-white/75 text-sm sm:text-base max-w-3xl mt-3 leading-relaxed">
+            It applies to landlord enquiries, tenant communication, letting
+            services, and property management activity carried out by our team.
           </p>
           <p className="text-white/70 text-xs sm:text-sm mt-4 tracking-[0.16em] uppercase">
             Effective Date: April 15, 2026
